@@ -16,13 +16,19 @@ namespace ALPHA02_JOGODEFUT
         public int ScoreCartas { get; set; }
         public bool GolRodada { get; set; }
         public bool Amarela { get; set; }
+        public bool Vermelho { get; set; }
+        public bool Energia { get; set; }
+        public bool Penalti { get; set; }
+        public bool golBool { get; set; }
         public bool Repeticao { get; set; }
         Random Sorteio = new Random();
-       
+
         public void SorteioCartas()
         {
+            CartasRodada.Clear();
+            ScoreDaRodada.Clear();
             ScoreCartas = 0;
-            for ( int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("___________________________");
                 CartaJogada = Sorteio.Next(6);
@@ -32,28 +38,62 @@ namespace ALPHA02_JOGODEFUT
                 Console.WriteLine(Cards[CartaJogada]);
                 Console.WriteLine(PontCards[CartaJogada]);
             }
-            if (CartasRodada[0] != CartasRodada[1] && CartasRodada[1] != CartasRodada[2])
+            if (CartasRodada[0] == CartasRodada[1] && CartasRodada[1] == CartasRodada[2])
+            {
+                Repeticao = true;
+            }
+            else
             {
                 Console.WriteLine("Score da Rodada: " + ScoreCartas);
                 Console.WriteLine("___________________________");
             }
-            else 
-            {
-                Repeticao= true;
-            }
         }
+
         public void CartaoAmarelo() 
         {
             if (Repeticao == true && CartaJogada == 4)
-            {
-               
+            {               
                 Console.WriteLine("Cartão Amarelo!");
-                this.Amarela = true;
-                
-
+                this.Amarela = true;             
+                Repeticao= false;
             }
         }
-
+        public void CartaoVermelho()
+        {
+            if (Repeticao == true && CartaJogada == 5)
+            {
+                Console.WriteLine("Cartão Vermelho!");
+                this.Vermelho = true;
+                Repeticao = false;
+            }
+        }
+        public void CartaoEnergia()
+        {
+            if (Repeticao == true && CartaJogada == 2)
+            {
+                Console.WriteLine("Energia extra!");
+                this.Energia = true;
+                Repeticao = false;
+            }
+        }
+        public void CartaoPenalti()
+        {
+            if (Repeticao == true && CartaJogada == 1)
+            {
+                Console.WriteLine("Penalti");
+                this.Penalti = true;
+                Repeticao = false;
+            }
+        }
+        public void CartaoGol()
+        {
+            if (Repeticao == true && CartaJogada == 0)
+            {
+                Console.WriteLine("Gol");
+                this.golBool = true;
+                Repeticao = false;
+            }
+        }
 
     }
 }

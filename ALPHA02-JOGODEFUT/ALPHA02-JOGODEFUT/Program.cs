@@ -4,10 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        bool rodada = false;
         bool encerrou = true;
         bool sair = false;
         int r = 0;
         int r1 = 0;
+        Random sorte= new Random();
         
         Random aleatorio = new Random();
         List<PlayerX> Player1 = new List<PlayerX>();
@@ -15,41 +17,54 @@ class Program
         PlayerX p = new PlayerX();
         PlayerX p2 = new PlayerX();
         CartasJogos c = new CartasJogos();
+        p.Apresentacao(); 
+        if (p.PlayerPC == 2)
+            { p2.PC = true; }
         Console.WriteLine("********* Player 1 ********");
         p.NomePlayer();
         Console.WriteLine("********* Player 2 ********");
         p2.NomePlayer();
         Console.Clear();
+        rodada = sorte.Next(1, 3) == 1 ? true : false;
 
         while (sair == false)
         {
             for (int i = 0; encerrou; i++)
             {
-                if (p.Acabou == false)
+               /* if (p.Acabou == false)
                 {
-                    c.SorteioCartas();
-                    p.Score += c.ScoreCartas;
-                    Player1.Add(p);
-                    p.Pontuacao();
-                    Console.ReadKey();
-                    p.encerrandoRodada();
-                    r++;
+                    if (rodada == false)
+                    { */
+                        p.JogoRodando();
+                        p.Score += c.ScoreCartas;
+                        Player1.Add(p);
+                        p.Pontuacao();
+                        Console.ReadKey();
+                        p.encerrandoRodada();
+                        r++;
+                        rodada = true;
+                /*    }
 
                 }
-                else { Console.WriteLine("Jogador {0} está sem energia! ", p.Nome); encerrou = true; }
+                else { Console.WriteLine("Jogador {0} está sem energia! ", p.Nome); encerrou = true; rodada = true; } 
 
                 if (p2.Acabou == false)
                 {
-                    c.SorteioCartas();
-                    p2.Score += c.ScoreCartas;
-                    Player2.Add(p2);
-                    p2.Pontuacao();
-                    Console.ReadKey();
-                    p2.encerrandoRodada();
-                    r1++;
+                    if (rodada == true)
+                    { */
+                        p2.JogoRodando();
+                        p2.Score += c.ScoreCartas;
+                        Player2.Add(p2);
+                        p2.Pontuacao();
+                        Console.ReadKey();
+                        p2.encerrandoRodada();
+                        r1++;
+                        rodada = false;
+                  /*  }
                 }
+                else { Console.WriteLine("Jogador {0} está sem energia! ", p2.Nome); encerrou = true; rodada = false; }
 
-                if (p2.Acabou == true && p.Acabou == true) { encerrou = false; sair = true; }
+                if (p2.Acabou == true && p.Acabou == true) { encerrou = false; sair = true;  } */ 
             }
 
         }
