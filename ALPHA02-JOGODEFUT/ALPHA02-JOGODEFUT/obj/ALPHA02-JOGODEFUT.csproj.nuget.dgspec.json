@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj": {}
+    "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ProjetoAlpha2-gamePOO2\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj": {}
   },
   "projects": {
-    "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj": {
+    "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ProjetoAlpha2-gamePOO2\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj",
+        "projectUniqueName": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ProjetoAlpha2-gamePOO2\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj",
         "projectName": "ALPHA02-JOGODEFUT",
-        "projectPath": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj",
+        "projectPath": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ProjetoAlpha2-gamePOO2\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT.csproj",
         "packagesPath": "C:\\Users\\jeuvi\\.nuget\\packages\\",
-        "outputPath": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\obj\\",
+        "outputPath": "D:\\Programação\\c#\\UNIDESC\\28-02-2023\\ALPHA02-JOGODEFUT\\ProjetoAlpha2-gamePOO2\\ALPHA02-JOGODEFUT\\ALPHA02-JOGODEFUT\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jeuvi\\AppData\\Roaming\\NuGet\\NuGet.Config",

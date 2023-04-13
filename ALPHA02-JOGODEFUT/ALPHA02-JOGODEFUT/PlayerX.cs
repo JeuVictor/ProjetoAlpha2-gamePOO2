@@ -22,6 +22,8 @@ namespace ALPHA02_JOGODEFUT
         public int CartAmarelo { get; set; }
         public bool PC { get; set; }
         public bool Acabou { get; set; }
+        public bool PenaltiChute { get; set; }
+        public bool PenaltiDefesa { get; set; }
 
         public void Apresentacao()
         {
@@ -71,6 +73,15 @@ namespace ALPHA02_JOGODEFUT
             Console.WriteLine("");
             Console.ReadKey();
         }
+        public void DefesaGoleiro ()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Incrivel defesa do Goleiro do {0}!! Não foi dessa fez que vemos um Gol!", Nome);
+            Console.WriteLine("°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°");
+            Console.WriteLine("");
+            Console.ReadKey();
+
+        }
 
         public void Ganhador()
         {
@@ -96,19 +107,26 @@ namespace ALPHA02_JOGODEFUT
                 Acabou = true;
             }
         }
-        public void Penalidade()
+        public void PenalidadeChute()
         {
             Console.WriteLine("Penalidade MAXIMA!");
             Console.WriteLine("O jogador {0} deverá tentar marcar um gol agora.", Nome);
-            Console.WriteLine("Digite: [1] - Chute na Esquerda | | [2] Chute no Centro | | [3] Chute a direita");
-            Chute = int.Parse(Console.ReadLine());
-      
-            Console.WriteLine("Agora a vez da defesa, o Goleiro deverá tentar defender o chute.");
-            Console.WriteLine("Digite: [1] - Defesa na Esquerda | | [2] Defesa no Centro | | [3] Defesa a direita");
-            Defesa = int.Parse(Console.ReadLine());
-
-            if (Chute != Defesa)
-            { GolMarcado(); }
+            if (PC == true) { Chute = Sorteio.Next(1, 4); Console.WriteLine("O chute foi {0}", Chute); }
+            else
+            {
+                Console.WriteLine("Digite: [1] - Chute na Esquerda | | [2] Chute no Centro | | [3] Chute a direita");
+                Chute = int.Parse(Console.ReadLine());
+            }
+        }
+        public void PenalidadeDefesa()
+        {
+            Console.WriteLine("Agora a vez da defesa, o Goleiro do jogador {0} deverá tentar defender o chute.", Nome);
+            if (PC == true) { Defesa = Sorteio.Next(1, 4); Console.WriteLine("A Defesa foi {0}", Defesa); }
+            else
+            {
+                Console.WriteLine("Digite: [1] - Defesa na Esquerda | | [2] Defesa no Centro | | [3] Defesa a direita");
+                Defesa = int.Parse(Console.ReadLine());
+            }            
         }
         public void JogoRodando()
         {
@@ -126,9 +144,11 @@ namespace ALPHA02_JOGODEFUT
             Card.CartaoPenalti();
             if (Card.Penalti == true)
             {
-                Penalidade();
+                PenaltiChute = true;
                 Card.Penalti = false;
             }
+            if (PenaltiChute == true) { PenalidadeChute();}
+            if (PenaltiDefesa == true) { PenalidadeDefesa(); }
             Card.CartaoEnergia();
             if (Card.Energia == true)
             { 
