@@ -4,6 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
+        try
+        {
+
+        
         bool rodada = false;
         bool encerrou = true;
         bool sair = false;
@@ -93,6 +97,14 @@ class Program
         if (p.Score > p2.Score) {p.Ganhador(); p.Pontuacao(); p2.Pontuacao(); Console.WriteLine("Rodadas {0} e {1}", r, r1); }
         else if ( p2.Score > p.Score ) {p2.Ganhador(); p.Pontuacao(); p2.Pontuacao(); Console.WriteLine("Rodadas {0} e {1}", r, r1); }
         else { p.Empate(); p.Pontuacao(); p2.Pontuacao(); Console.WriteLine("Rodadas {0} e {1}", r, r1); }
-        
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            Console.ReadKey();
+            throw;
+        }
+
     }
 }

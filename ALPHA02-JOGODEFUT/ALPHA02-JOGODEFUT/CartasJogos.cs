@@ -52,8 +52,10 @@ namespace ALPHA02_JOGODEFUT
         public void CartaoAmarelo() 
         {
             if (Repeticao == true && CartaJogada == 4)
-            {               
+            {
+                Console.WriteLine(" --------------- ");
                 Console.WriteLine("Cartão Amarelo!");
+                Console.WriteLine(" --------------- ");
                 this.Amarela = true;             
                 Repeticao= false;
             }
@@ -62,7 +64,10 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 5)
             {
+                Console.WriteLine(" --------------- ");
                 Console.WriteLine("Cartão Vermelho!");
+                Console.WriteLine(" O jogador Perdeu 2 energias!  ");
+                Console.WriteLine(" --------------- ");
                 this.Vermelho = true;
                 Repeticao = false;
             }
@@ -71,7 +76,9 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 2)
             {
+                Console.WriteLine(" --------------- ");
                 Console.WriteLine("Energia extra!");
+                Console.WriteLine(" --------------- ");
                 this.Energia = true;
                 Repeticao = false;
             }
@@ -80,7 +87,9 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 1)
             {
+                Console.WriteLine(" --------------- ");
                 Console.WriteLine("Penalti");
+                Console.WriteLine(" --------------- ");
                 this.Penalti = true;
                 Repeticao = false;
             }
@@ -89,8 +98,18 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 0)
             {
+                Console.WriteLine(" ----------------");
                 Console.WriteLine("Gol");
+                Console.WriteLine(" --------------- ");
                 this.golBool = true;
+                Repeticao = false;
+            }
+        }
+        public void CartaoFalta()
+        {
+            if (Repeticao == true && CartaJogada == 3)
+            {
+                Console.WriteLine("Falta!! Perdeu uma rodada");
                 Repeticao = false;
             }
         }

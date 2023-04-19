@@ -26,15 +26,37 @@ namespace ALPHA02_JOGODEFUT
         public bool PenaltiDefesa { get; set; }
 
         public void Apresentacao()
-        {
+        {           
+                string[] linhas = new string[]
+                {
+        "**********************************************",
+        "--- Bem vindo ao jogo de cartas e futebol ---",
+        "**********************************************",
+                };
+
+                int largura = Console.WindowWidth;
+                foreach (string linha in linhas)
+                {
+                    int espacos = (largura - linha.Length) / 2;
+                    Console.WriteLine(linha.PadLeft(espacos + linha.Length));
+                }
+            Console.WriteLine("\"Prefere jogar:\",\r\n \"[ 1 ]  1x1 - Player x Player\",\r\n  \"[ 2 ]  1xPC - player x Computador\"");
+
+                PlayerPC = int.Parse(Console.ReadLine());
+                Console.Clear();
+            
+
+
+            /*
             Console.WriteLine("**********************************************");
             Console.WriteLine("--- Bem vindo ao jogo de cartas e futebol ---");
             Console.WriteLine("**********************************************");
             Console.WriteLine("Prefere jogar:");
-            Console.WriteLine("1x1 - Player x Player: Digite 1");
-            Console.WriteLine("1xPC - player x Computador: Digite 2");
+            Console.WriteLine("[ 1 ]  1x1 - Player x Player ");
+            Console.WriteLine("[ 2 ]  1xPC - player x Computador ");
             PlayerPC = int.Parse(Console.ReadLine());
             Console.Clear();
+            */
         }
         public void NomePlayer () 
         {
@@ -170,6 +192,8 @@ namespace ALPHA02_JOGODEFUT
                 Energe = Energe - 2;
                 Card.Vermelho = false;
             }
+            Card.CartaoFalta();
+            Console.WriteLine("");
         }
 
 
