@@ -14,7 +14,6 @@ namespace ALPHA02_JOGODEFUT
        public List<int> ScoreDaRodada= new List<int>();
         public int CartaJogada { get; set; }
         public int ScoreCartas { get; set; }
-        public bool GolRodada { get; set; }
         public bool Amarela { get; set; }
         public bool Vermelho { get; set; }
         public bool Energia { get; set; }
