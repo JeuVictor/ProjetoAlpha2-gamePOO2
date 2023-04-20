@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ALPHA02_JOGODEFUT
 {
-    public class Textos 
+    public class Textos
     {
-        public string[] textoJogo = new string[] 
+        public string[] textoJogo = new string[]
         {
            "--- Bem vindo ao jogo de cartas e futebol ---",
            "GOOOOOOOOOOOLLLL!!!! Do ",
@@ -20,9 +20,11 @@ namespace ALPHA02_JOGODEFUT
            " não ganhou dessa vez!",
            "Apesar do empate, parabens aos jogadores! ",
            "Penalidade MAXIMA!",
-           " É uma boa chance de tentar marcar um gol"
+           " É uma boa chance de tentar marcar um gol",
+           "Rodada da vez : Jogador "
 
         };
+
         public void LinhaDestacada()
         {
             string linhaPontilhada = new string('*', 120);
