@@ -47,10 +47,10 @@ namespace ALPHA02_JOGODEFUT
             CartasRodada.Clear();
             ScoreDaRodada.Clear();
             ScoreCartas = 0;
-            BordaCima();
+            //BordaCima();
             for (int i = 0; i < 3; i++)
             {
-
+                
                 CartaJogada = Sorteio.Next(6);
                 CartasRodada.Add(Cards[CartaJogada]);
                 ScoreDaRodada.Add(PontCards[CartaJogada]);
@@ -58,17 +58,20 @@ namespace ALPHA02_JOGODEFUT
                 string CartaDaVez = Cards[CartaJogada];
                 const string formatoCarta = "║ {0,-21}Pts: {1,3} ║";
                string Pontos = $"{PontCards[CartaJogada]}";
-                string linhaCarta = string.Format(formatoCarta, CartaDaVez, Pontos).PadRight(LBordadaAcima.Length - 2); 
+                string linhaCarta = string.Format(formatoCarta, CartaDaVez, Pontos).PadRight(LBordadaAcima.Length - 2);
+                Console.WriteLine(LBordadaAcima);
                 Console.WriteLine(linhaCarta);
-                Console.ReadKey();
+                Console.WriteLine(LBordadaAbaixo);
+                if (i <2) { Console.WriteLine(" Carregando a proxima carta..."); }
+                else {  Console.WriteLine("Todas as Cartas foram Sorteadas"); }
+                
             
             }
-            BordaBaixo();
+            //BordaBaixo();
             if (CartasRodada[0] == CartasRodada[1] && CartasRodada[1] == CartasRodada[2])
             {
                 Repeticao = true;
-                Console.BackgroundColor = ConsoleColor.Blue;
-                Console.ForegroundColor = ConsoleColor.White;
+                
             }
             else
             {
@@ -83,7 +86,7 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 4)
             {
-                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.BackgroundColor = ConsoleColor.DarkYellow;
                 Console.ForegroundColor = ConsoleColor.White;
                 BordaCima();
                 Console.WriteLine("Cartão Amarelo!");
@@ -97,7 +100,7 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 5)
             {
-                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.BackgroundColor = ConsoleColor.DarkRed;
                 Console.ForegroundColor = ConsoleColor.White;
                 BordaCima();
                 Console.WriteLine("Cartão Vermelho!");
@@ -112,6 +115,8 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 2)
             {
+                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.White;
                 BordaCima();
                 Console.WriteLine("Energia extra!");
                 BordaBaixo();
@@ -124,6 +129,8 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 1)
             {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.White;
                 BordaCima();
                 Console.WriteLine("Penalti");
                 BordaBaixo(); ;
@@ -136,6 +143,8 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 0)
             {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
                 BordaCima();
                 Console.WriteLine("Gol");
                 BordaBaixo();
@@ -148,6 +157,8 @@ namespace ALPHA02_JOGODEFUT
         {
             if (Repeticao == true && CartaJogada == 3)
             {
+                Console.BackgroundColor = ConsoleColor.Magenta;
+                Console.ForegroundColor = ConsoleColor.White;
                 BordaCima();
                 Console.WriteLine("Falta!! Perdeu uma rodada");
                 Repeticao = false;

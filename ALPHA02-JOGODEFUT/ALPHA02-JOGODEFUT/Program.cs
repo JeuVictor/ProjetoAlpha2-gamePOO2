@@ -4,11 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-
-
-
-
-
+      
+        
         int EncerrarJogo = 0;
 
         Random sorte = new Random();
@@ -29,7 +26,7 @@ class Program
 
             p.Reset();
             p2.Reset();
-
+            Console.Clear();
             p.Apresentacao();
             if (p.PlayerPC == 2)
             { p2.PC = true; }
@@ -48,8 +45,7 @@ class Program
 
             while (sair == false)
             {
-                // for (int i = 0; encerrou; i++)
-                // {
+                
                 if (rodada == false)
                 {
                     if (p.PenaltiDefesa == true && p2.PenaltiChute == true)
@@ -72,14 +68,17 @@ class Program
                         Player1.Add(p);
                         p.Pontuacao();
                         Console.ReadKey();
+                        Console.Clear();
                         p.encerrandoRodada();
                         r++;
                         rodada = true;
                     }
-                    else { /*Console.WriteLine("Jogador {0} está sem energia! ", p.Nome); encerrou = true; */ rodada = true; }
+                    else { Console.WriteLine("Jogador {0} está sem energia! ", p.Nome); 
+                        encerrou = true; 
+                        rodada = true; 
+                    }
 
                 }
-
 
                 if (rodada == true)
                 {
@@ -103,15 +102,16 @@ class Program
                         Player2.Add(p2);
                         p2.Pontuacao();
                         Console.ReadKey();
+                        Console.Clear();
                         p2.encerrandoRodada();
                         r1++;
                         rodada = false;
                     }
                     else
                     {
-                        /* Console.WriteLine("Jogador {0} está sem energia! ", p2.Nome);  
-                         * encerrou = true; */
-                        rodada = false;
+                         Console.WriteLine("Jogador {0} está sem energia! ", p2.Nome);  
+                          encerrou = true; 
+                          rodada = false;
                     }
                 }
 
@@ -127,12 +127,11 @@ class Program
             else if (p.Gol == p2.Gol && p.Score > p2.Score) { p.Ganhador(); p2.Perdedor(); }
             else { p.Empate(); Console.WriteLine(p.Nome + " e " + p2.Nome); p.Pontuacao(); p2.Pontuacao(); }
             Console.WriteLine("Rodadas {0} e {1}", r, r1);
-            p.LinhaDestacada2();
+            
             Console.WriteLine("");
             Console.WriteLine("Deseja Continuar? \n [ 0 ] - Sim; \n [ 1 ] - Não;");
             EncerrarJogo = int.Parse(Console.ReadLine());
         }
-
 
 
 
