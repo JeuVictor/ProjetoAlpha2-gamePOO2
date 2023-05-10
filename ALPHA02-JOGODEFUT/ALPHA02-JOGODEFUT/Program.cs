@@ -53,6 +53,9 @@ class Program
                         if (p.PenaltiDefesa == true) { p.PenalidadeDefesa(); }
                         if (p.Defesa == p2.Chute) { p.DefesaGoleiro(); }
                         else { p2.GolMarcado(); }
+                        p2.Cabecario();
+                        p2.Pontuacao();
+                        Console.ReadKey();
                         p.PenaltiDefesa = false;
                         p2.PenaltiChute = false;
                     }
@@ -66,7 +69,7 @@ class Program
 
                         p.Score += c.ScoreCartas;
                         Player1.Add(p);
-                        p.Pontuacao();
+                        if (p.PenaltiChute != true) { p.Pontuacao(); }                       
                         Console.ReadKey();
                         Console.Clear();
                         p.encerrandoRodada();
@@ -89,6 +92,9 @@ class Program
                         {
                             if (p2.Defesa == p.Chute) { p2.DefesaGoleiro(); }
                             else { p.GolMarcado(); }
+                            p.Cabecario();
+                            p.Pontuacao();
+                            Console.ReadKey();
                             p2.PenaltiDefesa = false;
                             p.PenaltiChute = false;
                         }
@@ -100,7 +106,7 @@ class Program
 
                         p2.Score += c.ScoreCartas;
                         Player2.Add(p2);
-                        p2.Pontuacao();
+                        if (p2.PenaltiChute != true) { p2.Pontuacao();}
                         Console.ReadKey();
                         Console.Clear();
                         p2.encerrandoRodada();

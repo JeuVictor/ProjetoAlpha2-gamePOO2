@@ -50,20 +50,29 @@ namespace ALPHA02_JOGODEFUT
             //BordaCima();
             for (int i = 0; i < 3; i++)
             {
-                
+                string formatoCarta = "";
+                if (i < 2)
+                {
+                   // Thread.Sleep(600);
+                     formatoCarta = "║ {0,-21}Pts: {1,3} ║    Carregando a proxima carta...";
+                }
+                else { 
+                  //  Thread.Sleep(1000);
+                     formatoCarta = "║ {0,-21}Pts: {1,3} ║    Todas as Cartas foram Sorteadas";
+                }
                 CartaJogada = Sorteio.Next(6);
                 CartasRodada.Add(Cards[CartaJogada]);
                 ScoreDaRodada.Add(PontCards[CartaJogada]);
                 ScoreCartas += PontCards[CartaJogada];
                 string CartaDaVez = Cards[CartaJogada];
-                const string formatoCarta = "║ {0,-21}Pts: {1,3} ║";
+               // const string formatoCarta = "║ {0,-21}Pts: {1,3} ║    Carregando a proxima carta...";
                string Pontos = $"{PontCards[CartaJogada]}";
                 string linhaCarta = string.Format(formatoCarta, CartaDaVez, Pontos).PadRight(LBordadaAcima.Length - 2);
                 Console.WriteLine(LBordadaAcima);
                 Console.WriteLine(linhaCarta);
                 Console.WriteLine(LBordadaAbaixo);
-                if (i <2) { Console.WriteLine(" Carregando a proxima carta..."); }
-                else {  Console.WriteLine("Todas as Cartas foram Sorteadas"); }
+              /*  if (i <2) { Console.WriteLine(" Carregando a proxima carta..."); }
+                else {  Console.WriteLine("Todas as Cartas foram Sorteadas"); } */
                 
             
             }
